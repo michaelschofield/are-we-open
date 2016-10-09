@@ -1,0 +1,26 @@
+{
+  "name": "are-we-open",
+  "version": "1.0.0",
+  "description": "Answers a simple question - are we open?",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelschofield/are-we-open.git"
+  },
+  "author": "Michael Schofield",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelschofield/are-we-open/issues"
+  },
+  "homepage": "https://github.com/michaelschofield/are-we-open#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "postcss-cli": "^2.6.0"
+  },
+  "scripts": {
+    "autoprefixer" : "postcss -u autoprefixer -r dist/css/*"
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-us">
+
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Are we open?</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+
+    <div id="hours">{{ hours }}</div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js"></script>
+    <script>
+      var app = new Vue({
+
+        el : '#hours',
+
+        data : {
+          hours : null
+        },
+
+        created : function() {
+          this.fetchHours()
+        },
+
+        methods : {
+          fetchHours : function() {
+            var request = new XMLHttpRequest(),
+                self    = this;
+
+            request.open( 'GET', 'http://web.library.emory.edu/using-the-library/visiting-the-library/hours/index.json' );
+            request.onload = function() {
+              self.hours = JSON.parse( request.responseText )
+            }
+            request.send();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
